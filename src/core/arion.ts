@@ -1,6 +1,6 @@
 import express, { Express } from "express";
-import { router } from "../router";
-import { port } from "../config";
+import { router } from "@router/index";
+import { port } from "@core/config";
 
 export const arion: Express = express();
 
