@@ -1,3 +1,3 @@
-import { bootstrap } from "@core/arion";
+import { bootstrap } from "@core/app";
 
 bootstrap(); // spinning up the server
