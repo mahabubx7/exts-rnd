@@ -4,7 +4,7 @@ const router = Router();
 
 // greetings
 router.get("/", (_: Request, res: Response) => {
-  res.json({ message: "Welcome! to `ArionJS` 🐈 back-end nodejs framework." });
+  res.json({ message: "exTS 🐈! custom backend framework." });
 });
 
 export { router };

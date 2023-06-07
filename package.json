@@ -10,6 +10,7 @@
     "start": "cross-env NODE_ENV=production TS_NODE_BASEURL=./dist node -r tsconfig-paths/register dist/src/index.js",
     "dev": "nodemon",
     "build": "rimraf dist && tsc --project tsconfig.prod.json",
+    "build:clean": "rimraf dist",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "format": "prettier --write \"**/*.+(js|ts|json|md)\"",

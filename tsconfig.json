@@ -12,7 +12,8 @@
     "rootDir": "./",
     "paths": {
       "~/*": ["*"],
-      "@core/*": ["src/core/*"]
+      "@core/*": ["src/core/*"],
+      "@router/*": ["src/router/*"]
     }
   },
   "exclude": ["node_modules", "dist"],
