@@ -1,0 +1,27 @@
+# nodejs core
+node_modules
+
+# logs
+*-error.log
+*.log
+
+# build / production / output
+dist
+build
+
+# tools & extras
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+.env.prod
+!.sample.env
+!.example.env
+.vscode/*
+!.vscode/settings.json
+
+# OS & others
+.DS_Store
+.exe
+.ini
