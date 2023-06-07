@@ -1,3 +1,3 @@
-# arionjs
+# exTS
 
-Another Nodejs backend framework.
+Another ExpressJS custom framework (with TypeScript & in a better oraganized way).
