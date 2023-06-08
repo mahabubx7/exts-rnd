@@ -11,9 +11,8 @@
     "baseUrl": ".",
     "rootDir": "./",
     "paths": {
-      "~/*": ["*"],
       "@core/*": ["src/core/*"],
-      "@router/*": ["src/router/*"]
+      "@app/*": ["src/apps/*"]
     }
   },
   "exclude": ["node_modules", "dist"],
