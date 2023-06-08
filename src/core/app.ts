@@ -1,12 +1,14 @@
 import express, { Express } from "express";
-import { router } from "@router/index";
 import { port } from "@core/config";
+import router from "@core/router";
+import routes from "../routes";
 
 export const app: Express = express();
+router.register(routes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(router); // application router
+app.use(router.getRoutes());
 
 // bootstrap
 export const bootstrap = async () => {
