@@ -12,7 +12,8 @@
     "rootDir": "./",
     "paths": {
       "@core/*": ["src/core/*"],
-      "@app/*": ["src/apps/*"]
+      "@app/*": ["src/apps/*"],
+      "@guard": ["src/guards"]
     }
   },
   "exclude": ["node_modules", "dist"],

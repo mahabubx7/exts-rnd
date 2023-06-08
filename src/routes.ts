@@ -1,6 +1,6 @@
 import { IRoute } from "@core/interfaces";
 import { getHello, hello } from "@app/hello";
-import { helloGuard } from "./guards";
+import { helloGuard } from "@guard";
 
 const routes: IRoute[] = [
   {
