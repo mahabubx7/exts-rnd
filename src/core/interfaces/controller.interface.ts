@@ -1,4 +1,5 @@
-import { Request, Response } from "express";
+import { Request } from "express";
+import { ExtendedResponse } from "@core/interfaces";
 
 // export interface Controller {
 //   (
@@ -9,8 +10,8 @@ import { Request, Response } from "express";
 // }
 export type Controller = (
   req: Request,
-  res: Response,
+  res: ExtendedResponse,
   guards?: [] // will be used with IGuard[]
 ) => void;
 
-export type RouteControllerType = (req: Request, res: Response) => void;
+export type RouteControllerType = (req: Request, res: ExtendedResponse) => void;
