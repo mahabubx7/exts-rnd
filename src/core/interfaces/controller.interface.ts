@@ -1,17 +1,14 @@
-import { Request } from "express";
+import { NextFunction, Request } from "express";
 import { ExtendedResponse } from "@core/interfaces";
 
-// export interface Controller {
-//   (
-//     req: Request,
-//     res: Response,
-//     guards?: [] // will be used with IGuard[]
-//   ): void;
-// }
-export type Controller = (
-  req: Request,
-  res: ExtendedResponse,
-  guards?: [] // will be used with IGuard[]
-) => void;
+export interface Controller {
+  (req: Request, res: ExtendedResponse, next?: NextFunction): void;
+}
 
-export type RouteControllerType = (req: Request, res: ExtendedResponse) => void;
+export interface RouteControllerType {
+  (req: Request, res: ExtendedResponse, next?: NextFunction): void;
+}
+
+export interface RouteControllerWrapper {
+  (req: Request, res: ExtendedResponse, next: NextFunction): void;
+}

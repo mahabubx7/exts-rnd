@@ -7,5 +7,5 @@ export interface CustomResponse<T> {
 }
 
 export type ExtendedResponse<T = any> = Response<T> & {
-  toJson(data: T, statusCode?: number): Response<T>;
+  toJson(data: T, statusCode?: number, error?: any): Response<T>;
 };

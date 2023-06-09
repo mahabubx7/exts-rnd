@@ -1,5 +1,6 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, NextFunction } from "express";
+import { ExtendedResponse } from "@core/interfaces";
 
-export interface IGuard {
-  (req: Request, res: Response, next: NextFunction): void;
+export interface Guard {
+  (req: Request, res: ExtendedResponse, next: NextFunction): void;
 }
