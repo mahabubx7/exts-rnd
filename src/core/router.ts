@@ -23,13 +23,12 @@ class RouteHandler {
   mappingRoutes(): void {
     for (const routeObj of this.routeList) {
       const guards = routeObj.guards || [];
-      this.router[routeObj.method.toLowerCase()](
+      this.router[routeObj.method?.toLowerCase() || "get"](
         routeObj.endpoint,
         guards,
         routeObj.controller
       );
     }
-    // console.log(this.routeList);
   }
 
   getRoutes(): Router {

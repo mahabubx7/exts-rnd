@@ -6,7 +6,7 @@ const routes: IRoute[] = [
   {
     endpoint: "/:id",
     controller: getHello,
-    method: "get",
+    // method: "get",
   },
   {
     endpoint: "/",
