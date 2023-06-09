@@ -1,9 +1,8 @@
-import { IGuard, RouteControllerType } from "@core/interfaces";
-// import { Request, Response } from "express";
+import { Guard, RouteControllerType } from "@core/interfaces";
 
 export interface IRoute {
   prefix?: string;
-  guards?: IGuard[];
+  guards?: Guard[];
   method?: string | "use";
   endpoint: string;
   controller: RouteControllerType;

@@ -11,7 +11,11 @@ describe("Testing express app", () => {
   it("should return json with HTTP:200 at /", async () => {
     const response = await http(app).get("/");
     expect(response.body).toStrictEqual({
-      message: "exTS 🐈! custom backend framework.",
+      statusCode: 200,
+      data: {
+        message: "exTS 🐈! custom backend framework.",
+      },
+      error: null,
     });
   });
 });

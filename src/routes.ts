@@ -1,12 +1,15 @@
 import { IRoute } from "@core/interfaces";
-import { getHello, hello } from "@app/hello";
+import { getError, getHello, hello } from "@app/hello";
 import { helloGuard } from "@guard";
 
 const routes: IRoute[] = [
   {
+    endpoint: "/err",
+    controller: getError,
+  },
+  {
     endpoint: "/:id",
     controller: getHello,
-    method: "get",
   },
   {
     endpoint: "/",

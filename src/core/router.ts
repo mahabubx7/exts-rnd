@@ -1,5 +1,9 @@
-import { Router } from "express";
-import { IRoute } from "@core/interfaces";
+import { NextFunction, Request, Router } from "express";
+import {
+  ExtendedResponse,
+  IRoute,
+  RouteControllerWrapper,
+} from "@core/interfaces";
 
 class RouteHandler {
   private router: Router = Router();
@@ -20,16 +24,21 @@ class RouteHandler {
     this.mappingRoutes();
   }
 
+  promiseHandler(controller: RouteControllerWrapper) {
+    return (req: Request, res: ExtendedResponse, next: NextFunction) => {
+      Promise.resolve(controller(req, res, next)).catch(next);
+    };
+  }
+
   mappingRoutes(): void {
     for (const routeObj of this.routeList) {
       const guards = routeObj.guards || [];
-      this.router[routeObj.method.toLowerCase()](
+      this.router[routeObj.method?.toLowerCase() || "get"](
         routeObj.endpoint,
         guards,
-        routeObj.controller
+        this.promiseHandler(routeObj.controller)
       );
     }
-    // console.log(this.routeList);
   }
 
   getRoutes(): Router {

@@ -11,13 +11,17 @@ describe("Testing app/hello", () => {
   it("should return json with HTTP:200 at /", async () => {
     const response = await http(app).get("/getHello?q=test");
     expect(response.body).toStrictEqual({
-      message: "✔ HelloController/getHello",
-      params: {
-        id: "getHello",
+      statusCode: 200,
+      data: {
+        message: "✔ HelloController/getHello",
+        params: {
+          id: "getHello",
+        },
+        query: {
+          q: "test",
+        },
       },
-      query: {
-        q: "test",
-      },
+      error: null,
     });
   });
 });
