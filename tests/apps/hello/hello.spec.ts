@@ -3,7 +3,7 @@ import { app } from "@core/app";
 
 describe("Testing app/hello", () => {
   it("should spin the server with HTTP:200", async () => {
-    const response = await http(app).get("/hello/p");
+    const response = await http(app).get("/hello/p?q=test");
     expect(response.statusCode).toBe(200);
   });
 

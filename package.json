@@ -1,9 +1,9 @@
 {
-  "name": "arionjs",
+  "name": "exts",
   "version": "1.0.0",
-  "description": "another-nodejs-backend-framework",
+  "description": "exts-custom-express-modified-backend-framework",
   "main": "src/index.ts",
-  "repository": "https://github.com/mahabubx7/arionjs.git",
+  "repository": "https://github.com/mahabubx7/exts.git",
   "author": "Mahabub Alam <mahabubx7@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -25,7 +25,8 @@
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "express-async-handler": "^1.2.0",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

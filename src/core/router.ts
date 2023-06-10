@@ -27,8 +27,8 @@ const route404: IRoute = {
 };
 
 /**==========================================================*
- * @exTS custom express.js modified framework by @mahabubx7
- * @Core exTS/Core/Route - Application route handler
+ * @exTS custom express.js modified framework
+ * @Core exTS/route - Application route handler
  * @class RouteHandler
  *===========================================================*/
 

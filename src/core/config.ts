@@ -2,13 +2,13 @@ import { config } from "dotenv";
 
 config(); // invoking .env file parser
 
-interface ENV_VARIABLES {
-  port: number;
-  debug: boolean;
-}
+/**==========================================================*
+ * @exTS custom express.js modified framework
+ * @Configurations exTS/config - Application config setup
+ *===========================================================*/
 
 // register environment variable
-const env_variables: ENV_VARIABLES = {
+const env_variables = {
   port: Number(process.env.PORT), // application port
   debug: process.env.DEBUG === "true", // application debugging mode
 };
