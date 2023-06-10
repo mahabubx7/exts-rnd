@@ -4,7 +4,7 @@ import {
   IRoute,
   RouteControllerWrapper,
 } from "@core/interfaces";
-import { Err } from "./errors";
+import { Err } from "@core/errors";
 
 // default route 404 handler
 const routeNotFoundHandle: RouteControllerWrapper = (req, _) => {

@@ -1,10 +1,9 @@
 import express, { Express } from "express";
-import "express-async-errors";
 import { port } from "@core/config";
+import { IRoute } from "@core/interfaces";
 import router from "@core/router";
 import errorHandler from "@core/errors";
 import responseWrapper from "@core/response";
-import routes from "routes";
 
 /**==========================================================*
  * @exTS custom express.js modified framework
@@ -12,13 +11,15 @@ import routes from "routes";
  *===========================================================*/
 
 export const app: Express = express();
-router.register(routes);
 
-app.use(express.json());
-app.use(responseWrapper()); // custom response modify
-app.use(express.urlencoded({ extended: true }));
-app.use(router.getRoutes());
-app.use(errorHandler); // global error handling
+export const setupApps = (routes: IRoute[]) => {
+  router.register(routes);
+  app.use(express.json());
+  app.use(responseWrapper()); // custom response modify
+  app.use(express.urlencoded({ extended: true }));
+  app.use(router.getRoutes());
+  app.use(errorHandler); // global error handling
+};
 
 export const bootstrap = async () => {
   // ... upcoming invokes or callbacks
