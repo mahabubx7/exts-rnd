@@ -6,6 +6,11 @@ import errorHandler from "@core/errors";
 import responseWrapper from "@core/response";
 import routes from "../routes";
 
+/**==========================================================*
+ * @exTS custom express.js modified framework
+ * @App exTS - Application instance
+ *===========================================================*/
+
 export const app: Express = express();
 router.register(routes);
 

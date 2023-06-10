@@ -2,6 +2,5 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "files.eol": "\n",
-  "prettier.configPath": ".prettierrc.json",
-  "cSpell.words": ["arion", "arionjs", "rimraff"]
+  "prettier.configPath": ".prettierrc.json"
 }
