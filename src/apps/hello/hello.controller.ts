@@ -14,5 +14,5 @@ export const getHello: Controller = async (req, res) => {
 };
 
 export const getError: Controller = async (req, res) => {
-  throw new Err("Forced Error!", { reason: "Test purpose only!" }, 400);
+  throw new Err("Forced Error!", { reason: "Test purpose only!" }, 500);
 };

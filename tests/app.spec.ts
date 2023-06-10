@@ -18,4 +18,37 @@ describe("Testing express app", () => {
       error: null,
     });
   });
+
+  it("should return error/HTTP:404 for not found", async () => {
+    const response = await http(app).get("/whatever-not-registered");
+    expect(response.statusCode).toBe(404);
+    expect(response.body).toStrictEqual({
+      statusCode: 404,
+      data: null,
+      error: {
+        message: "⛔ Error! 404",
+        details: {
+          reason: "route couldn't be found.",
+          req_url: "/whatever-not-registered",
+          method: "GET",
+        },
+      },
+    });
+  });
+
+  // custom mock internal server error at /err [should be removed before starting any project]
+  it("should return error/HTTP:500 for internal error", async () => {
+    const response = await http(app).get("/err");
+    expect(response.statusCode).toBe(500);
+    expect(response.body).toStrictEqual({
+      statusCode: 500,
+      data: null,
+      error: {
+        message: "Forced Error!",
+        details: {
+          reason: "Test purpose only!",
+        },
+      },
+    });
+  });
 });
