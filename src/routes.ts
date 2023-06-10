@@ -1,23 +1,22 @@
-import { IRoute } from "@core/interfaces";
-import { getError, getHello, hello } from "@app/hello";
-import { helloGuard } from "@guard";
+import { Controller, IRoute } from "@core/interfaces";
+import { hello } from "@app/hello";
+
+// sample welcome route for (root) /
+const welcome: Controller = async (_, res) => {
+  res.toJson({ message: "exTS 🐈! custom backend framework." });
+};
+
+/**==========================================================*
+ * @exTS custom express.js modified framework
+ * @routes Register applications & routes here
+ *===========================================================*/
 
 const routes: IRoute[] = [
-  {
-    endpoint: "/err",
-    controller: getError,
-    method: "get",
-  },
-  {
-    endpoint: "/hello/:id",
-    controller: getHello,
-    method: "get",
-  },
+  ...hello, // hello application hooked
   {
     endpoint: "/",
-    controller: hello,
+    controller: welcome,
     method: "get",
-    guards: [helloGuard],
   },
 ];
 
