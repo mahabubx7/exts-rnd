@@ -19,9 +19,9 @@
 
 ✅ Comes with initial setup for TDD/Tests in `tests` directory.
 
-🕖 Environment variables are parsed automatically.
+✅ User input sanitization using Zod schema based validations.
 
-🕖 User input sanitization usnig Zod schema based validations (maybe as @Decorator in controllers).
+🕖 Environment variables are parsed automatically.
 
 🕖 Database drivers/orm auto-wired based on environment special variables for database.
 
