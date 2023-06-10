@@ -1,6 +1,6 @@
-# exTS - custom expressJs (modified) framework.
+# exTS - friendly node.js framework.
 
-> This a expressJs (under the hood) based modified backend framework. Written with TypeScript and build for ES2020 (recommended). Used node version is >= 18.16.x (v18.16.0 LTS - recommended)
+> This a express.js modified backend framework. It's written in TypeScript and build (target) for ES2020 (recommended). Used node version is >= 18.16.x (v18.16.0 LTS - recommended)
 
 ### Todo (in-development phase) ...
 
@@ -19,14 +19,13 @@
 
 ✅ Comes with initial setup for TDD/Tests in `tests` directory.
 
-✅ User input sanitization using Zod schema based validations.
+✅ User input sanitization using Zod schema based validations (Guard/middleware).
 
 🕖 Environment variables are parsed automatically.
 
 🕖 Database drivers/orm auto-wired based on environment special variables for database.
 
-🕖 Database Adapter:
-
+🕖 Adapters (Databases):
 - `typegoose` for mongoose/mongdb supports.
 - `typeorm` for typeorm/sql supports.
 - `neo4j` for neo4j-driver supports.
