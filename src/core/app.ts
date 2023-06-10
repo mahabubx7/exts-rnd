@@ -4,7 +4,7 @@ import { port } from "@core/config";
 import router from "@core/router";
 import errorHandler from "@core/errors";
 import responseWrapper from "@core/response";
-import routes from "../routes";
+import routes from "routes";
 
 /**==========================================================*
  * @exTS custom express.js modified framework

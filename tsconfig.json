@@ -11,6 +11,7 @@
     "baseUrl": ".",
     "rootDir": "./",
     "paths": {
+      "routes": ["src/routes.ts"],
       "@core/*": ["src/core/*"],
       "@app/*": ["src/apps/*"],
       "@guard": ["src/guards"]
