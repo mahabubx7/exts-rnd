@@ -11,12 +11,12 @@
     "baseUrl": ".",
     "rootDir": "./",
     "paths": {
-      "routes": ["src/routes.ts"],
-      "@core/*": ["src/core/*"],
+      "~/src": ["src/routes"],
+      "@core/*": ["core/*"],
       "@app/*": ["src/apps/*"],
       "@guard": ["src/guards"]
     }
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src", "tests"]
+  "include": ["src", "core", "tests", "./setupTests.ts"]
 }
