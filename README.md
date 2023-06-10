@@ -1,4 +1,4 @@
-# exTS - friendly node.js framework.
+# exTS - friendly node.js backend framework.
 
 > This a express.js modified backend framework. It's written in TypeScript and build (target) for ES2020 (recommended). Used node version is >= 18.16.x (v18.16.0 LTS - recommended)
 
