@@ -15,7 +15,7 @@ const pathsToModuleNameMapper = (paths, { prefix }) => {
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
-  setupFiles: ["./setupTests.ts"],
+  setupFiles: ["./tests/setupTests.ts"],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: "<rootDir>/",
   }),
