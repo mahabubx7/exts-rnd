@@ -61,7 +61,6 @@ class RouteHandler {
     list.map((r) => this.add(r));
     this.routeList.push(route404); // default 404
     this.mappingRoutes();
-    console.log(this.routeList);
   }
 
   promiseHandler(controller: RouteControllerWrapper) {
