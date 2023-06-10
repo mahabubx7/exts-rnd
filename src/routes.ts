@@ -6,10 +6,12 @@ const routes: IRoute[] = [
   {
     endpoint: "/err",
     controller: getError,
+    method: "get",
   },
   {
-    endpoint: "/:id",
+    endpoint: "/hello/:id",
     controller: getHello,
+    method: "get",
   },
   {
     endpoint: "/",

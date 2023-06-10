@@ -4,6 +4,6 @@ export interface IRoute {
   prefix?: string;
   guards?: Guard[];
   method?: string | "use";
-  endpoint: string;
+  endpoint: string | undefined;
   controller: RouteControllerType;
 }
