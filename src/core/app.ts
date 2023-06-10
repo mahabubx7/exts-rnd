@@ -1,5 +1,4 @@
 import express, { Express } from "express";
-import "express-async-errors";
 import { port } from "@core/config";
 import router from "@core/router";
 import errorHandler from "@core/errors";
