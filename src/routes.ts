@@ -1,4 +1,4 @@
-import { Controller, IRoute } from "@core/interfaces";
+import { Controller, Route } from "@exts";
 import { hello } from "@app/hello";
 
 /**==========================================================*
@@ -11,13 +11,13 @@ const welcome: Controller = async (_, res) => {
   res.toJson({ message: "exTS 🐈! custom backend framework." });
 };
 
-const routes: IRoute[] = [
-  ...hello, // hello application added
+const routes: Route[] = [
+  ...hello, // integrated => apps/hello
   {
     endpoint: "/",
     controller: welcome,
     method: "get",
   },
-];
+]; // root level <routes> registerer
 
 export default routes;

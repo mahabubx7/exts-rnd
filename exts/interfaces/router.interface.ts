@@ -1,6 +1,6 @@
-import { Guard, RouteControllerType } from "@core/interfaces";
+import { Guard, RouteControllerType } from "@exts";
 
-export interface IRoute {
+export interface Route {
   prefix?: string;
   guards?: Guard[];
   method?: string | "use";

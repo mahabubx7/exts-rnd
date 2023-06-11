@@ -1,6 +1,5 @@
-import { debug } from "@core/config";
+import { GlobalErrorHandler, env } from "@exts";
 import { ZodError } from "zod";
-import { GlobalErrorHandler } from "@core/interfaces";
 
 /**==========================================================*
  * @exTS custom express.js modified framework
@@ -15,26 +14,23 @@ export class Err extends Error {
   constructor(message: string, details?: unknown, statusCode?: number) {
     super(message);
     this.statusCode = statusCode || 500;
-    this.details = details || "Something went wrong";
+    this.details = details || { reason: "something went wrong!" };
     Object.setPrototypeOf(this, Err.prototype);
   }
 }
 
-const errorHandler: GlobalErrorHandler = (err, req, res, next) => {
-  if (debug) console.info("DEBUG = " + debug + "\n", err.message);
+export const errorHandler: GlobalErrorHandler = (err, req, res, next) => {
+  if (env.debug) console.info("DEBUG = " + env.debug + "\n", err.message);
 
-  if (err instanceof ZodError) {
-    console.info("ZodError caught");
-    return res.toJson(null, 400, {
+  if (err instanceof ZodError || err.name === "ZodError") {
+    return res.toJson(null, err.statusCode || 406, {
       message: err.message,
-      details: err.issues,
+      details: err.details?.details,
     });
   }
 
-  return res.toJson(null, err.statusCode, {
-    message: err.message,
-    details: err.details,
+  return res.toJson(null, err.statusCode || 500, {
+    message: err.message || "🚫 Internal Server Error!",
+    details: err.details || { reason: "something went wrong!" },
   });
 };
-
-export default errorHandler;

@@ -1,4 +1,4 @@
-import { Guard, validatorOptions } from "@core/interfaces";
+import { Err, Guard, validatorOptions } from "@exts";
 
 /**==========================================================*
  * @exTS custom express.js modified framework
@@ -12,10 +12,15 @@ export const validationGuards = (options: validatorOptions) => {
     if (body) {
       const bodyValidation = body.safeParse(req.body);
       if (bodyValidation.success !== true) {
-        return res.toJson(null, 400, {
-          message: "Invalid body input!",
-          details: bodyValidation.error.issues,
-        });
+        const err = new Err(
+          "Invalid body given!",
+          {
+            details: bodyValidation.error.issues,
+          },
+          406
+        );
+        err.name = "ZodError";
+        throw err;
       }
       req.body = bodyValidation.data;
     }
@@ -23,10 +28,15 @@ export const validationGuards = (options: validatorOptions) => {
     if (params) {
       const paramsValidation = params.safeParse(req.params);
       if (paramsValidation.success !== true) {
-        return res.toJson(null, 400, {
-          message: "Invalid params given!",
-          details: paramsValidation.error.issues,
-        });
+        const err = new Err(
+          "Invalid params given!",
+          {
+            details: paramsValidation.error.issues,
+          },
+          406
+        );
+        err.name = "ZodError";
+        throw err;
       }
       req.body = paramsValidation.data;
     }
@@ -34,10 +44,15 @@ export const validationGuards = (options: validatorOptions) => {
     if (query) {
       const queryValidation = query.safeParse(req.query);
       if (queryValidation.success !== true) {
-        return res.toJson(null, 400, {
-          message: "Invalid query given!",
-          details: queryValidation.error.issues,
-        });
+        const err = new Err(
+          "Invalid query given!",
+          {
+            details: queryValidation.error.issues,
+          },
+          406
+        );
+        err.name = "ZodError";
+        throw err;
       }
       req.body = queryValidation.data;
     }

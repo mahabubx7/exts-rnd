@@ -1,5 +1,5 @@
 import { NextFunction, Request } from "express";
-import { ExtendedResponse } from "@core/interfaces";
+import { ExtendedResponse } from "@exts";
 
 export interface Controller {
   (req: Request, res: ExtendedResponse, next?: NextFunction): void;

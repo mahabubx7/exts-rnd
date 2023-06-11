@@ -1,10 +1,5 @@
 import { NextFunction, Request, Router } from "express";
-import {
-  ExtendedResponse,
-  IRoute,
-  RouteControllerWrapper,
-} from "@core/interfaces";
-import { Err } from "@core/errors";
+import { ExtendedResponse, Route, RouteControllerWrapper, Err } from "@exts";
 
 // default route 404 handler
 const routeNotFoundHandle: RouteControllerWrapper = (req, _) => {
@@ -20,7 +15,7 @@ const routeNotFoundHandle: RouteControllerWrapper = (req, _) => {
 };
 
 // default route 404
-const route404: IRoute = {
+const route404: Route = {
   endpoint: "*",
   method: "use",
   controller: routeNotFoundHandle,
@@ -34,25 +29,24 @@ const route404: IRoute = {
 
 class RouteHandler {
   private router: Router = Router();
-  private routeList: IRoute[] = [];
+  private routeList: Route[] = [];
 
-  constructor(routes: IRoute[] = []) {
+  constructor(routes: Route[] = []) {
     this.routeList = [...routes, ...this.routeList];
     this.mappingRoutes();
   }
 
-  add(routeObj: IRoute): void {
+  add(routeObj: Route): void {
     this.routeList.unshift(routeObj);
     this.mappingRoutes();
   }
 
-  register(routeObj: IRoute[]): void {
-    const carrier: IRoute[] = [];
-    const list: IRoute[] = [];
+  register(routeObj: Route[]): void {
+    const carrier: Route[] = [];
+    const list: Route[] = [];
     for (const r of routeObj) {
       if (["", "*", "/*"].includes(r.endpoint)) {
         carrier.push(r);
-        console.log(r.endpoint);
       } else {
         list.push(r);
       }
@@ -88,4 +82,4 @@ class RouteHandler {
   }
 }
 
-export default new RouteHandler(); // returns as its object
+export const router = new RouteHandler(); // returns as its object

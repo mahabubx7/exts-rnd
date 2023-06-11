@@ -1,4 +1,4 @@
-import { ExtendedResponse } from "@core/interfaces";
+import { ExtendedResponse } from "@exts";
 
 /**==========================================================*
  * @exTS custom express.js modified framework

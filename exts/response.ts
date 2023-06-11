@@ -1,5 +1,5 @@
 import { NextFunction, Request } from "express";
-import { CustomResponse, ExtendedResponse } from "@core/interfaces";
+import { CustomResponse, ExtendedResponse } from "@exts";
 
 /**==========================================================*
  * @exTS custom express.js modified framework
@@ -15,6 +15,7 @@ export const responseWrapper = () => {
         data,
         error,
       };
+      res.charset = "utf-8";
       return res.status(statusCode).json(customResponse);
     };
 
