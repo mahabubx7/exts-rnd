@@ -1,5 +1,4 @@
-import { Err } from "@core/errors";
-import { Controller } from "@core/interfaces";
+import { Controller, Err } from "@exts";
 
 export const getHello: Controller = async (req, res) => {
   res.toJson({
@@ -10,5 +9,5 @@ export const getHello: Controller = async (req, res) => {
 };
 
 export const getError: Controller = async (req, res) => {
-  throw new Err("Forced Error!", { reason: "Test purpose only!" }, 500);
+  throw new Err("");
 };

@@ -12,11 +12,11 @@
     "rootDir": "./",
     "paths": {
       "~/src": ["src/routes"],
-      "@core/*": ["core/*"],
+      "@exts": ["exts/index", "exts/interfaces"],
       "@app/*": ["src/apps/*"],
       "@guard": ["src/guards"]
     }
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src", "core", "tests", "tests/setupTests.ts"]
+  "include": ["src", "exts", "tests", "tests/setupTests.ts"]
 }

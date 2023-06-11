@@ -1,4 +1,4 @@
-import { bootstrap, setupApps } from "@core/app";
+import { bootstrap, setupApps } from "@exts";
 import routes from "~/src";
 
 /**==========================================================*
@@ -6,6 +6,6 @@ import routes from "~/src";
  * @Bootstrap start the application
  *===========================================================*/
 
-setupApps([...routes]);
+setupApps([...routes]); // setting the apps into exts
 
 bootstrap(); // spinning up the server

@@ -21,11 +21,12 @@
 
 ✅ User input sanitization using Zod schema based validations (Guard/middleware).
 
-🕖 Environment variables are parsed automatically.
+✅ Core Environment variables are parsed.
 
 🕖 Database drivers/orm auto-wired based on environment special variables for database.
 
 🕖 Adapters (Databases):
+
 - `typegoose` for mongoose/mongdb supports.
 - `typeorm` for typeorm/sql supports.
 - `neo4j` for neo4j-driver supports.

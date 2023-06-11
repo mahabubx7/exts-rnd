@@ -1,5 +1,5 @@
 import http from "supertest";
-import { app } from "@core/app";
+import { app } from "@exts";
 
 describe("Testing express app", () => {
   it("should spin the server with HTTP:200", async () => {
@@ -44,9 +44,9 @@ describe("Testing express app", () => {
       statusCode: 500,
       data: null,
       error: {
-        message: "Forced Error!",
+        message: "🚫 Internal Server Error!",
         details: {
-          reason: "Test purpose only!",
+          reason: "something went wrong!",
         },
       },
     });
